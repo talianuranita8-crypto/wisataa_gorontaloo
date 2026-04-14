@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bantuan - Gorontalo Utara</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f8f0; color: #1a3a1a; line-height: 1.6; }
+        .navbar { background-color: #1e5a3a; color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo span { color: #ffd966; }
+        .hamburger { font-size: 2rem; cursor: pointer; background: none; border: none; color: white; display: none; }
+        .nav-menu { display: flex; list-style: none; gap: 1rem; flex-wrap: wrap; }
+        .nav-menu li a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px; transition: background 0.3s; }
+        .nav-menu li a:hover { background-color: #ffd966; color: #1e5a3a; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .emergency { background: #ffebcc; padding: 1rem; border-radius: 15px; margin-bottom: 1rem; }
+        .faq { background: white; padding: 1rem; border-radius: 15px; margin-bottom: 1rem; cursor: pointer; }
+        .faq-answer { display: none; padding: 1rem; background: #e6f2e6; border-radius: 10px; margin-top: 0.5rem; }
+        footer { background-color: #1e5a3a; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+        @media (max-width: 768px) { .hamburger { display: block; } .nav-menu { display: none; width: 100%; flex-direction: column; margin-top: 1rem; } .nav-menu.show { display: flex; } .nav-menu li { text-align: center; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Pesona<span>Gorut</span></div>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="destinasi.html">Destinasi</a></li>
+            <li><a href="aktivitas.html">Aktivitas</a></li>
+            <li><a href="budaya.html">Budaya</a></li>
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="perencana.html">Perencana</a></li>
+            <li><a href="itinerary.html">Itinerary</a></li>
+            <li><a href="akomodasi.html">Akomodasi</a></li>
+            <li><a href="keberlanjutan.html">Keberlanjutan</a></li>
+            <li><a href="bantuan.html">Bantuan</a></li>
+            <li><a href="pesanan.html">Pesanan</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Pusat Bantuan & Kontak Darurat</h2>
+        <div class="emergency">
+            <h3>📞 Nomor Darurat</h3>
+            <p>Polisi: 110 | Ambulans: 118 | Pemadam Kebakaran: 113 | Polisi Wisata Gorut: +62 812-3456-7890</p>
+        </div>
+
+        <div class="faq" onclick="toggleFAQ(1)">
+            <h3>❓ FAQ: Apakah aman bepergian di Gorut?</h3>
+            <div id="faq1" class="faq-answer">Ya, Gorontalo Utara sangat aman untuk wisatawan. Namun tetap jaga barang bawaan.</div>
+        </div>
+
+        <div class="faq" onclick="toggleFAQ(2)">
+            <h3>❓ Bolehkah minum air keran?</h3>
+            <div id="faq2" class="faq-answer">Disarankan minum air mineral kemasan. Air keran untuk mandi saja.</div>
+        </div>
+
+        <div class="faq" onclick="toggleFAQ(3)">
+            <h3>❓ Cuaca terbaik untuk liburan?</h3>
+            <div id="faq3" class="faq-answer">April - Oktober (musim kemarau). Hindari Desember - Maret (hujan lebat).</div>
+        </div>
+
+        <div class="emergency">
+            <h3>🤖 Chatbot AI (Simulasi)</h3>
+            <p>Hubungi WhatsApp: +62 811-222-3333 (24 jam) atau email: help@pesonagorut.id</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Pesona Gorontalo Utara</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => { navMenu.classList.toggle('show'); });
+
+        function toggleFAQ(id) {
+            const answer = document.getElementById('faq' + id);
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+            } else {
+                answer.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
